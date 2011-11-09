@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	   					   http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean name="CancelRequestWrapper" class="com.coral.multi.wrappers.CancelRequestWrapper" />
+	<bean name="CancelResponseWrapper" class="com.coral.multi.wrappers.CancelResponseWrapper" />
+	<bean name="ErrorResponsesWrapper" class="com.coral.multi.wrappers.ErrorResponsesWrapper" />
+	<bean name="LegacyAvailabilityAndRatesResponsesWrapper" class="com.coral.multi.wrappers.LegacyAvailabilityAndRateResponsesWrapper" />
+	<bean name="LegacyAvailabilityAndRatesRequestsWrapper" class="com.coral.multi.wrappers.LegacyAvailabilityAndRatesRequestsWrapper" />
+	<bean name="LegacyReservReqWrapper" class="com.coral.multi.wrappers.LegacyReservReqWrapper" />
+	<bean name="MultiAvailabilityRequestWrapper" class="com.coral.multi.wrappers.MultiAvailabilityRequestWrapper" />
+	<bean name="MultiAvailabilityResponseWrapper" class="com.coral.multi.wrappers.MultiAvailabilityResponseWrapper" />
+	<bean name="MultiReservReqWrapper" class="com.coral.multi.wrappers.MultiReservReqWrapper" />
+	<bean name="MultiResrvResWrapper" class="com.coral.multi.wrappers.MultiResrvResWrapper" />
+	<bean name="ReservResWrapper" class="com.coral.multi.wrappers.ReservResWrapper" />
+</beans>

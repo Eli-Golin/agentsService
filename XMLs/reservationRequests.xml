@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<reservationRequests xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="reservationRequests.xsd">
+  <login>
+    <agentId>700000</agentId>
+    <password>test</password>
+  </login>
+  <numberOfReservationsInItinerary>1</numberOfReservationsInItinerary>
+  <geustNationality>USA</geustNationality>
+  <geustFirstName>Bill</geustFirstName>
+  <geustLastName>Gate</geustLastName>
+  <eDanMemberNo>123</eDanMemberNo>
+  <numberOfAdults>2</numberOfAdults>
+  <numberOfChildren>0</numberOfChildren>
+  <numberOfBabies>1</numberOfBabies>
+  <numberOfRooms>1</numberOfRooms>
+  <mop>1</mop>
+  <travelAgentReference>123</travelAgentReference>
+  <reservationRequest>
+    <reservationInItinerary>1</reservationInItinerary>
+    <hotelId>1</hotelId>
+    <roomType>STD</roomType>
+    <arrivalDate>20/12/2007</arrivalDate>
+    <departureDate>22/12/2007</departureDate>
+    <boardArrangement>BB</boardArrangement>
+    <numOfFridayNightDinners>1</numOfFridayNightDinners>
+    <numOfSaturdayLunches>1</numOfSaturdayLunches>
+    <numOfHolidayLunches>1</numOfHolidayLunches>
+    <specialRequest>
+      <requestNo>1</requestNo>
+      <requestType>1</requestType>
+    </specialRequest>
+  </reservationRequest>
+</reservationRequests>

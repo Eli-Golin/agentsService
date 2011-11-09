@@ -1,0 +1,244 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+
+	<display-name>Multi Reservation Service</display-name>
+
+	<!-- Spring context files -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath*:spring/*.xml</param-value>
+	</context-param>
+	<!-- Spring context files -->
+
+	<filter>
+		<filter-name>Client Origin Resolver Filter</filter-name>
+		<filter-class>com.coral.multi.filters.ClientOriginResolverFilter</filter-class>
+		<init-param>
+			<param-name>USA_IP</param-name>
+			<param-value>146.145.198.18,146.145.198.17,146.145.198.19,65.102.51.254</param-value>
+		</init-param>
+	</filter>
+
+	<filter>
+		<filter-name>XmlConverter Filter</filter-name>
+		<filter-class>com.coral.multi.filters.XmlConverterFilter</filter-class>
+	</filter>
+
+	<filter>
+		<filter-name>UsaIsrFormatConverter Filter</filter-name>
+		<filter-class>com.coral.multi.filters.UsaIsrFormatConverterFilter</filter-class>
+	</filter>
+
+	<filter>
+		<filter-name>Authorization Filter</filter-name>
+		<filter-class>com.coral.multi.filters.AuthorizationFilter</filter-class>
+	</filter>
+
+	<filter>
+		<filter-name>Dates Validation Filter</filter-name>
+		<filter-class>com.coral.multi.filters.ReservationsDatesFilter</filter-class>
+	</filter>
+
+	<filter>
+		<filter-name>Occupation Filter</filter-name>
+		<filter-class>com.coral.multi.filters.CapacityValidationFilter</filter-class>
+	</filter>
+
+	<filter>
+		<filter-name>Maximum Rooms Filter</filter-name>
+		<filter-class>com.coral.multi.filters.MaximumReservationsFilter</filter-class>
+	</filter>
+
+
+	<filter>
+		<filter-name>Price Validation Filter</filter-name>
+		<filter-class>com.coral.multi.filters.PriceValidationFilter</filter-class>
+	</filter>
+
+	<filter>
+		<filter-name>Guests names Validation Filter</filter-name>
+		<filter-class>com.coral.multi.filters.GuestsNamesValidationFilter</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>Client Origin Resolver Filter</filter-name>
+		<servlet-name>MultiReservation</servlet-name>
+	</filter-mapping>
+
+	<filter-mapping>
+		<filter-name>XmlConverter Filter</filter-name>
+		<servlet-name>MultiReservation</servlet-name>
+	</filter-mapping>
+
+	<filter-mapping>
+		<filter-name>UsaIsrFormatConverter Filter</filter-name>
+		<servlet-name>MultiReservation</servlet-name>
+	</filter-mapping>
+
+	<filter-mapping>
+		<filter-name>Authorization Filter</filter-name>
+		<servlet-name>MultiReservation</servlet-name>
+	</filter-mapping>
+
+	<filter-mapping>
+		<filter-name>Dates Validation Filter</filter-name>
+		<servlet-name>MultiReservation</servlet-name>
+	</filter-mapping>
+
+	<filter-mapping>
+		<filter-name>Occupation Filter</filter-name>
+		<servlet-name>MultiReservation</servlet-name>
+	</filter-mapping>
+
+	<filter-mapping>
+		<filter-name>Maximum Rooms Filter</filter-name>
+		<servlet-name>MultiReservation</servlet-name>
+	</filter-mapping>
+
+
+	<filter-mapping>
+		<filter-name>Price Validation Filter</filter-name>
+		<servlet-name>MultiReservation</servlet-name>
+	</filter-mapping>
+
+	<filter-mapping>
+		<filter-name>Guests names Validation Filter</filter-name>
+		<servlet-name>MultiReservation</servlet-name>
+	</filter-mapping>
+
+	<!-- Spring context loader -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	<!-- Spring context loader -->
+	
+	<servlet>
+		<servlet-name>client_gui_input</servlet-name>
+		<jsp-file>/client_gui_input.jsp</jsp-file>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>client_gui_output</servlet-name>
+		<jsp-file>/client_gui_output.jsp</jsp-file>
+	</servlet>
+
+	<servlet>
+		<servlet-name>ClientResponseSender</servlet-name>
+		<servlet-class>com.coral.multi.servlets.ClientResponseSender</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>AuthorizationServlet</servlet-name>
+		<display-name>AuthorizationServlet</display-name>
+		<servlet-class>com.coral.multi.servlets.AuthorizationErrorServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>CancellationServlet</servlet-name>
+		<servlet-class>com.coral.multi.servlets.CancellationServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>OccupationViolationServlet</servlet-name>
+		<display-name>OccupationViolationServlet</display-name>
+		<servlet-class>com.coral.multi.servlets.CapacityViolationServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>MaximumReservationsViolationServlet</servlet-name>
+		<display-name>MaximumReservationsViolationServlet</display-name>
+		<servlet-class>com.coral.multi.servlets.MaximumReservationsErrorServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>DatesErrorServlet</servlet-name>
+		<servlet-class>com.coral.multi.servlets.DatesErrorServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>PriceViolationServlet</servlet-name>
+		<display-name>PriceViolationServlet</display-name>
+		<servlet-class>com.coral.multi.servlets.PriceValidationErrorServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>MultiReservation</servlet-name>
+		<display-name>MultiReservation</display-name>
+		<servlet-class>com.coral.multi.servlets.MultiReservationServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>MultiAvailability</servlet-name>
+		<servlet-class>com.coral.multi.servlets.MultiAvailabilityServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>GuestsNameErrorServlet</servlet-name>
+		<servlet-class>com.coral.multi.servlets.GuestsNamesErrorServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>client_gui_input</servlet-name>
+		<url-pattern>/client_gui_input.jsp</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>client_gui_output</servlet-name>
+		<url-pattern>/client_gui_output.jsp</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>ClientResponseSender</servlet-name>
+		<url-pattern>/responseSender</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>AuthorizationServlet</servlet-name>
+		<url-pattern>/authorizationFailed</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>CancellationServlet</servlet-name>
+		<url-pattern>/cancellationServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>OccupationViolationServlet</servlet-name>
+		<url-pattern>/occupationError</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>MaximumReservationsViolationServlet</servlet-name>
+		<url-pattern>/maximumReservationsViolation</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>DatesErrorServlet</servlet-name>
+		<url-pattern>/dateViolation</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>PriceViolationServlet</servlet-name>
+		<url-pattern>/priceNotValid</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet-mapping>
+		<servlet-name>MultiReservation</servlet-name>
+		<url-pattern>/agentsService</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>MultiAvailability</servlet-name>
+		<url-pattern>/availability</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>GuestsNameErrorServlet</servlet-name>
+		<url-pattern>/noGuestName</url-pattern>
+	</servlet-mapping>
+
+</web-app>

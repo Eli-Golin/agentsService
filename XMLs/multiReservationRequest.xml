@@ -1,0 +1,68 @@
+<multiBookHeader>
+	<reservationDetails>
+		<login>
+			<agentId>700000</agentId>
+			<password>test</password>
+		</login>
+		<numberOfReservationsInItinerary>1</numberOfReservationsInItinerary>
+		<geustNationality>IL</geustNationality>
+		<geustFirstName>test test</geustFirstName>
+		<geustLastName>test test</geustLastName>
+		<eDanMemberNo>35</eDanMemberNo>
+		<numberOfAdults>2</numberOfAdults>
+		<numberOfChildren>2</numberOfChildren>
+		<numberOfBabies>1</numberOfBabies>
+		<numberOfRooms>3</numberOfRooms>
+		<mop>1</mop>
+		<travelAgentReference>935695109</travelAgentReference>
+		<reservationRequest>
+			<reservationInItinerary>1</reservationInItinerary>
+			<hotelId>8</hotelId>
+			<roomType>STD</roomType>
+			<arrivalDate>21/08/2011</arrivalDate>
+			<departureDate>25/08/2011</departureDate>
+			<boardArrangement>BB</boardArrangement>
+			<numOfFridayNightDinners>1</numOfFridayNightDinners>
+			<numOfSaturdayLunches>1</numOfSaturdayLunches>
+			<numOfHolidayLunches>1</numOfHolidayLunches>
+			<specialRequest>
+				<requestNo></requestNo>
+				<requestType></requestType>
+			</specialRequest>
+			<comments>fooofooo</comments>
+		</reservationRequest>
+	</reservationDetails>
+	<reservationDetails>
+		<login>
+			<agentId>700200</agentId>
+			<password>yayasoft</password>
+		</login>
+		<numberOfReservationsInItinerary>1</numberOfReservationsInItinerary>
+		<geustNationality>IL</geustNationality>
+		<geustFirstName>test test</geustFirstName>
+		<geustLastName>test test</geustLastName>
+		<eDanMemberNo>0</eDanMemberNo>
+		<numberOfAdults>1</numberOfAdults>
+		<numberOfChildren>0</numberOfChildren>
+		<numberOfBabies>0</numberOfBabies>
+		<numberOfRooms>1</numberOfRooms>
+		<mop>1</mop>
+		<travelAgentReference>935695109</travelAgentReference>
+		<reservationRequest>
+			<reservationInItinerary>1</reservationInItinerary>
+			<hotelId>8</hotelId>
+			<roomType>STD</roomType>
+			<arrivalDate>21/08/2011</arrivalDate>
+			<departureDate>25/08/2011</departureDate>
+			<boardArrangement>BB</boardArrangement>
+			<numOfFridayNightDinners>0</numOfFridayNightDinners>
+			<numOfSaturdayLunches>0</numOfSaturdayLunches>
+			<numOfHolidayLunches>0</numOfHolidayLunches>
+			<specialRequest>
+				<requestNo></requestNo>
+				<requestType></requestType>
+			</specialRequest>
+			<comments></comments>
+		</reservationRequest>
+	</reservationDetails>
+</multiBookHeader>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<cancelReservationResponse>
+	<numberOfReservationsInItinerary>1</numberOfReservationsInItinerary>
+	<reservationNo>210</reservationNo>
+	<status>Canceled by the member</status>
+	<totalPrice>408</totalPrice>
+	<currency >$</currency >
+	<comments>This Reservation is canceld</comments>
+</cancelReservationResponse>

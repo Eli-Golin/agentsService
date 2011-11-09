@@ -1,0 +1,46 @@
+TODO list:
+
+1. Add support for authorization. (done , but without filter!)
+   need to create a Filter which checks authorization details, and decides
+   whether to pass a request to multiReservationService or pass it to "Access Denied" service
+   
+2. Refactor with Yaron :
+   2.1 remove "yaya" from code (done)
+   2.2 unit tests (copy and run to current project) (done)
+   2.3 generalization of methods (partially done)
+
+3. encoding issues(done)
+
+4. Ask Yair for the case when there is only one reservation and you receive a "multiReservNum" and a "reservNum".
+   Hilmi doesn't want me to send a multi reservNum request when there's only one reservation request.
+   What would you like me to put instead?
+
+
+
+
+-----------------------------------------------------------
+    getBestRateCombination(new Double(lang_cd), hotelId, areaCd, roomType,arrivalDate, departureDate, numOfAdults, numOfChildren, numOfRooms, agentLogin.getId(), boardArrangement);
+	responseHotel.setHotelIdDescription(resultSet.getString(HOTEL_ID_DESCRIPTION));
+	responseHotel.setHotelDescription(resultSet.getString(HOTEL_DESCRIPTION));
+	responseHotel.setArrivalDate(requestHotel.getHotelDetails().getArrivalDate());
+	responseHotel.setDepartureDate(requestHotel.getHotelDetails().getDepartureDate());
+	Picture picture = new Picture();
+	picture.setPictureType( resultSet.getString(HOTEL_PICTURE_TYPE));
+	picture.setPictureUrl(resultSet.getString(HOTEL_PICTURE_URL));
+	room.setRoomType(resultSet.getString(ROOM_TYPE));
+	room.setRoomTypeDescription(resultSet.getString(ROOM_TYPE_DESCRIPTION));
+	Picture roomPicture = new Picture();
+	roomPicture.setPictureType(resultSet.getString(ROOM_PICTURE_TYPE));
+	roomPicture.setPictureUrl(resultSet.getString(ROOM_PICTURE_URL));
+	room.getPictures().getPictures().add(roomPicture);
+	room.setRoomDescription(resultSet.getString(ROOM_DESCRIPTION));
+	room.setDeal(resultSet.getInt(DEAL));
+	room.setComments(resultSet.getString(DEAL_COMMENTS));
+	room.setAvailability(resultSet.getString(AVAILABILITY));
+	room.setBoardArrangement(boardArrangement);
+	room.setPrice(resultSet.getDouble(PRICE));
+	room.setCurrency(resultSet.getString(CURRENCY));
+-----------------------------------------------------------
+5. Need to Rewrite the MultiReservationServlet.
+
+------------------------------------ All closed issues ------------------------------------------------------------------------------------

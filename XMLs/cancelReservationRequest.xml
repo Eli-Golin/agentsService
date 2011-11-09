@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cancelReservationRequest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="cancelReservationRequest.xsd">
+  <login>
+    <agentId>123456</agentId>
+    <password>password</password>
+  </login>
+  <reservationNo>210</reservationNo>
+</cancelReservationRequest>

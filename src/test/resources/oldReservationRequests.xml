@@ -1,0 +1,32 @@
+<reservationRequests>
+  <login>
+    <agentId>700000</agentId>
+    <password>test</password>
+  </login>
+  <numberOfReservationsInItinerary>1</numberOfReservationsInItinerary>
+  <geustNationality>USA</geustNationality>
+  <geustFirstName>Bill</geustFirstName>
+  <geustLastName>Gates</geustLastName>
+  <eDanMemberNo>123</eDanMemberNo>
+  <numberOfAdults>2</numberOfAdults>
+  <numberOfChildren>3</numberOfChildren>
+  <numberOfBabies>1</numberOfBabies>
+  <numberOfRooms>1</numberOfRooms>
+  <mop>12</mop>
+  <travelAgentReference>123</travelAgentReference>
+  <reservationRequest>
+    <reservationInItinerary>1</reservationInItinerary>
+    <hotelId>1</hotelId>
+    <roomType>STD</roomType>
+    <arrivalDate>20/12/2007</arrivalDate>
+    <departureDate>22/12/2007</departureDate>
+    <boardArrangement>BB</boardArrangement>
+    <numOfFridayNightDinners>1</numOfFridayNightDinners>
+    <numOfSaturdayLunches>2</numOfSaturdayLunches>
+    <numOfHolidayLunches>1</numOfHolidayLunches>
+    <specialRequest>
+      <requestNo>1</requestNo>
+      <requestType>2</requestType>
+    </specialRequest>
+  </reservationRequest>
+</reservationRequests>

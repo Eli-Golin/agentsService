@@ -1,0 +1,5 @@
+# all hidden files/directories will be ignored except .gitignore
+.*
+!/.gitignore
+# all files in target directory will be ignored intirely 
+target/

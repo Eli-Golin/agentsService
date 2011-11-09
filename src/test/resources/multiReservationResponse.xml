@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<multiResponses>
+	<reservationResponses>
+		<numberOfReservationsInItinerary>1</numberOfReservationsInItinerary>
+		<multiReservationNo>1</multiReservationNo>
+		<status>Reservation Action</status>
+		<totalPrice>408</totalPrice>
+		<currency>$</currency>
+		<comments>Resrvation Response</comments>
+		<reservationResponse>
+			<reservationInItinerary>1</reservationInItinerary>
+			<reservationNo>210</reservationNo>
+			<hotelId>1</hotelId>
+			<roomType>STD</roomType>
+			<roomTypeDescription>Standard Room</roomTypeDescription>
+			<arrivalDate>2007-12-20</arrivalDate>
+			<departureDate>2007-12-22</departureDate>
+			<status>Reserved</status>
+			<price>612</price> 
+			<currency>$</currency>
+		</reservationResponse>
+	</reservationResponses>
+	<reservationResponses>
+		<numberOfReservationsInItinerary>1</numberOfReservationsInItinerary>
+		<multiReservationNo>1</multiReservationNo>
+		<status>Reservation Action</status> 
+		<totalPrice>408</totalPrice>
+		<currency>$</currency>
+		<comments>Resrvation Response</comments>
+		<reservationResponse>
+			<reservationInItinerary>1</reservationInItinerary>
+			<reservationNo>217</reservationNo>
+			<hotelId>1</hotelId>
+			<roomType>STD</roomType>
+			<roomTypeDescription>Standard Room</roomTypeDescription>
+			<arrivalDate>2007-12-20</arrivalDate>
+			<departureDate>2007-12-22</departureDate>
+			<status>Reserved</status>
+			<price>408</price> 
+			<currency>$</currency>
+		</reservationResponse>
+	</reservationResponses>
+</multiResponses>

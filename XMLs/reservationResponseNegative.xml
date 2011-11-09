@@ -1,0 +1,20 @@
+﻿<reservationResponses>
+	<numberOfReservationsInItinerary>1</numberOfReservationsInItinerary>
+	<multiReservationNo>772346</multiReservationNo>
+	<status>DENIED</status> 
+	<totalPrice>408</totalPrice>
+	<currency>$</currency>
+	<comments>Resrvation Response</comments>
+	<reservationResponse>
+		<reservationInItinerary>1</reservationInItinerary>
+		<reservationNo>210</reservationNo>
+		<hotelId>1</hotelId>
+		<roomType>STD</roomType>
+		<roomTypeDescription>Standard Room</roomTypeDescription>
+		<arrivalDate>2007-12-20</arrivalDate>
+		<departureDate>2007-12-22</departureDate>
+		<status>Reserved</status> <!--This status is irrelevant !-->
+		<price>501</price> 
+		<currency>$</currency>
+	</reservationResponse>
+</reservationResponses>
