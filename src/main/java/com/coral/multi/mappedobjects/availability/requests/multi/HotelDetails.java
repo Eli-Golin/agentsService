@@ -62,7 +62,7 @@ public class HotelDetails {
 		return boardArrangement;
 	}
 	public void setBoardArrangement(String boardArrangement) {
-		this.boardArrangement = boardArrangement;
+		this.boardArrangement = boardArrangement.toUpperCase();
 	}
 	public int getNumOfFridayDinners() {
 		return numOfFridayDinners;
@@ -86,6 +86,6 @@ public class HotelDetails {
 		return roomType;
 	}
 	public void setRoomType(String roomType) {
-		this.roomType = roomType;
+		this.roomType = roomType.toUpperCase();
 	}
 }

@@ -21,6 +21,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.joda.time.DateTimeConstants;
 import org.joda.time.DateTimeZone;
 import org.joda.time.LocalDate;
+import org.joda.time.LocalTime;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 
@@ -107,6 +108,15 @@ public class GeneralUsage {
 		return ans;
 	}
 
+	public static boolean isCurrentTimeLaterThanNoon(){
+		LocalTime currentTime = new LocalTime();
+		LocalTime noon = new LocalTime(12,0);
+		if(currentTime.isAfter(noon))
+			return true;
+		else
+			return false;
+	}
+	
 	public static void readParameter(ServletRequest servletRequest) throws IOException { // assigns
 																							// the
 																							// requestType
@@ -204,4 +214,5 @@ public class GeneralUsage {
 		request.setAttribute(AppConstants.IS_RESERVATION_REQUEST, false);
 		request.setAttribute(AppConstants.IS_CANCELLATION_REQUEST, false);
 	}
+	
 }

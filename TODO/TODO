@@ -44,3 +44,10 @@ TODO list:
 5. Need to Rewrite the MultiReservationServlet.
 
 ------------------------------------ All closed issues ------------------------------------------------------------------------------------
+
+-------------------------------------- Tasks for updated service---------------------------------------------------------------------------
+
+1. dates check related to "Friday" should be executed only after 12:00 - done!
+2. simulate American agent.
+3. roomType and board arrangement - change to upper case. - done!
+4. avoid price validation in a case of an American client

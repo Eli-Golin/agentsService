@@ -14,7 +14,7 @@ import org.springframework.web.context.WebApplicationContext;
 
 import com.coral.multi.general.AppConstants;
 import com.coral.multi.general.GeneralUsage;
-import com.coral.multi.mappedobjects.availability.requests.legacy.LegacyAvailabilityAndRatesRequest;
+import com.coral.multi.mappedobjects.availability.requests.legacy.LegacyAvailabilityAndRatesRequests;
 import com.coral.multi.mappedobjects.availability.requests.multi.MultiAvailabilityRequest;
 import com.coral.multi.mappedobjects.availability.responses.legacy.LegacyAvailabilityAndRatesResponses;
 import com.coral.multi.mappedobjects.availability.responses.multi.MultiAvailabilityResponse;
@@ -159,7 +159,7 @@ public class XmlConverterFilter implements Filter {
 		}
 		else if((Boolean)request.getAttribute(AppConstants.IS_AVAILABILITY_REQUEST)){ //availability
 			XmlToObjectWrapper wrapper = (XmlToObjectWrapper)context.getBean("LegacyAvailabilityAndRatesRequestsWrapper");
-			LegacyAvailabilityAndRatesRequest legacyAvailabilityRequest = (LegacyAvailabilityAndRatesRequest)wrapper.buildFromXml(requestTypeAndSentData[sentDataIndex]);
+			LegacyAvailabilityAndRatesRequests legacyAvailabilityRequest = (LegacyAvailabilityAndRatesRequests)wrapper.buildFromXml(requestTypeAndSentData[sentDataIndex]);
 			return legacyAvailabilityRequest;
 		}
 		else { //cancellation

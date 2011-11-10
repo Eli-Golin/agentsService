@@ -1,15 +1,16 @@
 package com.coral.multi.mappedobjects.availability.responses.legacy;
 
 public class Picture {
-	private int pictureType;
+	private String pictureType;
 	private String pictureUrl;
 	
-	public int getPictureType() {
+	public String getPictureType() {
 		return pictureType;
 	}
-	public void setPictureType(int pictureType) {
+	public void setPictureType(String pictureType) {
 		this.pictureType = pictureType;
 	}
+	
 	public String getPictureUrl() {
 		return pictureUrl;
 	}

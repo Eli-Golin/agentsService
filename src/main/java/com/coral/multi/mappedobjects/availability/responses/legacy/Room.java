@@ -6,7 +6,7 @@ public class Room {
 	private String roomDescription;
 	private Pictures pictures;
 	private double price;
-	private int availability;
+	private String availability;
 	public Room(){
 		pictures = new Pictures();
 	}
@@ -42,10 +42,10 @@ public class Room {
 	public void setPrice(double price) {
 		this.price = price;
 	}
-	public int getAvailability() {
+	public String getAvailability() {
 		return availability;
 	}
-	public void setAvailability(int availability) {
+	public void setAvailability(String availability) {
 		this.availability = availability;
 	}
 }

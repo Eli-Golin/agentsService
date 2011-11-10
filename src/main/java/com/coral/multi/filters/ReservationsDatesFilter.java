@@ -119,9 +119,11 @@ public class ReservationsDatesFilter implements Filter {
 		boolean arrivalDateSunday  = false ; 
 		if(GeneralUsage.getDayOfWeek(arrivalDate) == DaysOfWeek.SUNDAY)
 			arrivalDateSunday = true;
-		if(arrivalDateSunday){
-			if(arrivalDate.minusDays(2).equals(currentDate))
-				rightInterval = false;
+		if(GeneralUsage.isCurrentTimeLaterThanNoon()){
+			if(arrivalDateSunday){
+				if(arrivalDate.minusDays(2).equals(currentDate))
+					rightInterval = false;
+			}
 		}
 		return rightInterval;
 	}

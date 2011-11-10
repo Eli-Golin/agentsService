@@ -58,18 +58,22 @@ public class UsaIsrFormatConverterFilter implements Filter {
 				MultiAvailabilityRequest multiAvailabilityrequest = convertLegacyAvailabilityToMultiAvailability(legacyAvailabilityRequests);
 				request.setAttribute(AppConstants.CONVERTED_OBJECT, multiAvailabilityrequest);
 				filterChain.doFilter(request, response);
-				MultiAvailabilityResponse multiAvailabilityResponse = (MultiAvailabilityResponse)request.getAttribute(AppConstants.CONVERTED_OBJECT);
-				LegacyAvailabilityAndRatesResponses oldAvailabilityResponse = convertMultiAvailabilityRespToLegacyAvailabilityResp(multiAvailabilityResponse);
-				request.setAttribute(AppConstants.CONVERTED_OBJECT, oldAvailabilityResponse);
+				if((Boolean)request.getAttribute(AppConstants.IS_AVAILABILITY_REQUEST)){
+					MultiAvailabilityResponse multiAvailabilityResponse = (MultiAvailabilityResponse)request.getAttribute(AppConstants.CONVERTED_OBJECT);
+					LegacyAvailabilityAndRatesResponses oldAvailabilityResponse = convertMultiAvailabilityRespToLegacyAvailabilityResp(multiAvailabilityResponse);
+					request.setAttribute(AppConstants.CONVERTED_OBJECT, oldAvailabilityResponse);
+				}
 			}
 			else if((Boolean)request.getAttribute(AppConstants.IS_RESERVATION_REQUEST)){
 				OldReservationRequest oldReservRequest = (OldReservationRequest)request.getAttribute(AppConstants.CONVERTED_OBJECT);
 				MultiReservationRequest multiReservationRequest = convertLegacyReservationToMultiReservation(oldReservRequest);
 				request.setAttribute(AppConstants.CONVERTED_OBJECT, multiReservationRequest);
 				filterChain.doFilter(request, response);
-				MultiReservationResponse multiReservationResponse = (MultiReservationResponse)request.getAttribute(AppConstants.CONVERTED_OBJECT);
-				ReservationResponse oldResrvationResponse = convertMultiReservResponseToOldReservResponse(multiReservationResponse);
-				request.setAttribute(AppConstants.CONVERTED_OBJECT, oldResrvationResponse);
+				if((Boolean)request.getAttribute(AppConstants.IS_RESERVATION_REQUEST)){
+					MultiReservationResponse multiReservationResponse = (MultiReservationResponse)request.getAttribute(AppConstants.CONVERTED_OBJECT);
+					ReservationResponse oldResrvationResponse = convertMultiReservResponseToOldReservResponse(multiReservationResponse);
+					request.setAttribute(AppConstants.CONVERTED_OBJECT, oldResrvationResponse);
+				}
 			}
 			
 		}
@@ -102,6 +106,7 @@ public class UsaIsrFormatConverterFilter implements Filter {
 		hotelDetails.setNumOfSaturdayLunches(legacyAvailability.getRequestDetails().getNumOfSaturdayLunches());
 		hotelDetails.setReservInItinr(legacyAvailability.getRequestDetails().getReservInIten());
 		hotelDetails.setRoomType(""); // setting empty string enables all room types
+		reservationHotel.setHotelDetails(hotelDetails);
 		reservationHotel.setNationality(legacyAvailability.getNationality());
 		reservationHotel.setNumOfReservInIten(legacyAvailability.getNumOfResInIten());
 		reservationHotel.setNumOfRooms(legacyAvailability.getNumOfRooms());
@@ -195,8 +200,7 @@ public class UsaIsrFormatConverterFilter implements Filter {
 		List<ResponseHotel> multiResponseHotelsList = hotelsContainer.getHotels();
 		ResponseHotel multiResponseHotel = multiResponseHotelsList.get(0);
 		legacyResponseForSingleHotel.setHotelAreaCd(multiResponseHotel.getAreaCd());
-		legacyResponseForSingleHotel.setReservInIten(multiResponseHotel.getReservInItiner());
-
+		legacyResponseForSingleHotel.setReservInIten(1);
 		RoomsPerDate allRoomsForSingleDate = multiResponseHotel.getRooms().getRoomsArrangement().get(0);
 		legacyResponseForSingleHotel.setArrivalDate(allRoomsForSingleDate.getArrivalDate());
 		legacyResponseForSingleHotel.setDepartureDate(allRoomsForSingleDate.getDepartureDate());
@@ -209,7 +213,7 @@ public class UsaIsrFormatConverterFilter implements Filter {
 		legacyHotelPictureList.add(legacyHotelPicture);
 		legacyHotelPictures.setPictures(legacyHotelPictureList);
 		com.coral.multi.mappedobjects.availability.responses.multi.Picture multiHotelPicture = multiHotelPictures.getPictures().get(0);
-		legacyHotelPicture.setPictureType(Integer.parseInt(multiHotelPicture.getPictureType()));
+		legacyHotelPicture.setPictureType(multiHotelPicture.getPictureType());
 		legacyHotelPicture.setPictureUrl(multiHotelPicture.getPictureUrl());
 		//dealing with hotel pictures - end
 		Hotels legacyHotels = new Hotels();
@@ -217,6 +221,7 @@ public class UsaIsrFormatConverterFilter implements Filter {
 		legacyHotel.setPictures(legacyHotelPictures);
 		legacyHotel.setHotelIdDescription(multiResponseHotel.getHotelIdDescription());
 		legacyHotel.setHotelDescription(multiResponseHotel.getHotelDescription());
+		legacyHotel.setHotelId(multiResponseHotel.getHotelId());
 		List<Hotel> legacyHotelList = new LinkedList<Hotel>();
 		legacyHotelList.add(legacyHotel);
 		legacyHotels.setHotels(legacyHotelList);
@@ -234,14 +239,14 @@ public class UsaIsrFormatConverterFilter implements Filter {
 		legacyRooms.setRooms(listOfLegacyRoom);
 		for(com.coral.multi.mappedobjects.availability.responses.multi.Room  multiResponseRoom : multiRoomsforSingleData.getRooms()){
 			Room legacyRoom = new Room();
-			legacyRoom.setAvailability(Integer.parseInt(multiResponseRoom.getAvailability()));
+			legacyRoom.setAvailability(multiResponseRoom.getAvailability());
 			legacyRoom.setPrice(multiResponseRoom.getPrice());
 			legacyRoom.setRoomDescription(multiResponseRoom.getRoomDescription());
 			legacyRoom.setRoomType(multiResponseRoom.getRoomType());
 			legacyRoom.setRoomTypeDescription(multiResponseRoom.getRoomTypeDescription());
 			com.coral.multi.mappedobjects.availability.responses.legacy.Pictures legacyRoomPictures = new com.coral.multi.mappedobjects.availability.responses.legacy.Pictures();
 			Picture legacyRoomPicture = new Picture(); 
-			legacyRoomPicture.setPictureType(Integer.parseInt(multiResponseRoom.getPictures().getPictures().get(0).getPictureType()));
+			legacyRoomPicture.setPictureType(multiResponseRoom.getPictures().getPictures().get(0).getPictureType());
 			legacyRoomPicture.setPictureUrl(multiResponseRoom.getPictures().getPictures().get(0).getPictureUrl());
 			List<Picture> legacyRoomPictureList = new LinkedList<Picture>();
 			legacyRoomPictureList.add(legacyRoomPicture);

@@ -35,7 +35,7 @@ public class NewRoomReservationDetails {
 		return roomType;
 	}
 	public void setRoomType(String roomType) {
-		this.roomType = roomType;
+		this.roomType = roomType.toUpperCase();
 	}
 	public String getArrivalDate() {
 		return arrivalDate;
@@ -53,7 +53,7 @@ public class NewRoomReservationDetails {
 		return boardArrangement;
 	}
 	public void setBoardArrangement(String boardArrangement) {
-		this.boardArrangement = boardArrangement;
+		this.boardArrangement = boardArrangement.toUpperCase();
 	}
 	public Integer getFridayDinnerNum() {
 		return fridayDinnerNum;

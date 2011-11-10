@@ -23,7 +23,7 @@ public class ClientOriginResolverFilter implements Filter {
 			ServletException {
 		filterConfig.getServletContext().log("\n------- Inside ClientOriginResolverFilter --------\n");
 		String remoteIp = request.getRemoteHost();
-		String[] usaIps = filterConfig.getInitParameter("USA_IP").split(",");
+		String[] usaIps = filterConfig.getInitParameter(AppConstants.IS_USA).split(",");
 		request.setAttribute(AppConstants.IS_USA, new Boolean(false));
 		for(String ip : usaIps){
 			if(remoteIp.equals(ip)){

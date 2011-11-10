@@ -51,7 +51,7 @@ public class CapacityValidationFilter implements Filter {
 			RequestDispatcher dispatcher = req.getRequestDispatcher("/occupationError");
 			dispatcher.include(req, res);
 		}
-		filterConfig.getServletContext().log("\n---Inside CapacityValidationFilter---\n");
+		filterConfig.getServletContext().log("\n---Outside CapacityValidationFilter---\n");
 	}
 
 	private boolean checkAvailabilityCapacity(ServletRequest request){
