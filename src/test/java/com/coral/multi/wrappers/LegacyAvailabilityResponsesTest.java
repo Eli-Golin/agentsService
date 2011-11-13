@@ -107,7 +107,7 @@ public class LegacyAvailabilityResponsesTest {
 	
 	@Test
 	public void testHotelPictureType(){
-		assertEquals(1, responseObject.getResponses().get(0).getHotels().getHotels().get(0).getPictures().getPictures().get(0).getPictureType());
+		assertEquals("1", responseObject.getResponses().get(0).getHotels().getHotels().get(0).getPictures().getPictures().get(0).getPictureType());
 	}
 	
 	@Test
@@ -158,7 +158,7 @@ public class LegacyAvailabilityResponsesTest {
 	
 	@Test
 	public void testFirstRoomFirstPictureType(){
-		assertEquals(1, responseObject.getResponses().get(0).getHotels().getHotels().get(0).getRooms().getRooms().get(0).getPictures().getPictures().get(0).getPictureType());
+		assertEquals("1", responseObject.getResponses().get(0).getHotels().getHotels().get(0).getRooms().getRooms().get(0).getPictures().getPictures().get(0).getPictureType());
 	}
 	
 	@Test
@@ -173,7 +173,7 @@ public class LegacyAvailabilityResponsesTest {
 	
 	@Test
 	public void testFirstRoomAvailability(){
-		assertEquals(1, responseObject.getResponses().get(0).getHotels().getHotels().get(0).getRooms().getRooms().get(0).getAvailability());
+		assertEquals("1", responseObject.getResponses().get(0).getHotels().getHotels().get(0).getRooms().getRooms().get(0).getAvailability());
 		System.out.println(wrapper.returnAsXml(responseObject));
 	}
 }

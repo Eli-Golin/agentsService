@@ -16,12 +16,14 @@ public class ClientResponseSender extends HttpServlet {
 	 */
 	private static final long serialVersionUID = 7301797033021114350L;
 	public void doPost(HttpServletRequest request, HttpServletResponse response){
+		getServletContext().log("---------- Inside ClientResponeSender----------\n");
 		try {
 			GeneralUsage.sendAnswerToClient(request.getRemoteHost(), (String) request.getAttribute(AppConstants.CONVERTED_OBJECT), response);
 		} catch (IOException e) {
 			request.getServletContext().log("An IO Exception occurred while sending the answer back to the client");
 			e.printStackTrace();
 		}
+		getServletContext().log("---------- Outside ClientResponeSender----------\n");
 	}
 
 }

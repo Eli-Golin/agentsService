@@ -519,4 +519,38 @@ public class DbDaoUtils {
 		}
 		return reservationNum;
 	}
+	
+	public static synchronized Double checkForRoomPrice(int hotelNum, String roomType, String arrivalDate, String departureDate, int numOfAdults, int numOfChildren, String guestNationallity, String boardArrangementm, long agentNum){
+		String procedure = "{? = call  BEST_RATE_COMBINATION_AGENT.GET_RESERVATION_PRICE(?,?,?,?,?,?,?,?,?,?)}";
+		Double price = 0.0;
+		try {
+			connection = dataSource.getConnection();
+			CallableStatement callableStatement = connection.prepareCall(procedure);
+			callableStatement.registerOutParameter(1, Types.DOUBLE);
+			callableStatement.setInt(2, hotelNum);
+			callableStatement.setString(3, roomType);
+			callableStatement.setDate(4, Date.valueOf(GeneralUsage.convertJodaDateStringToSqlDateString(arrivalDate)));
+			callableStatement.setDate(5, Date.valueOf(GeneralUsage.convertJodaDateStringToSqlDateString(departureDate)));
+			callableStatement.setInt(6, numOfAdults);
+			callableStatement.setInt(7, numOfChildren);
+			callableStatement.setInt(8, 1); //numOfRooms parameter - always 1
+			callableStatement.setString(9, guestNationallity);
+			callableStatement.setString(10, boardArrangementm);
+			callableStatement.setLong(11, agentNum);
+			long nanoSecondsStart = System.nanoTime();
+			callableStatement.execute();
+			long nanoSecondsEnd = System.nanoTime();
+			System.out.println("BEST_RATE_COMBINATION_AGENT.GET_RESERVATION_PRICE in database takes: "+(nanoSecondsEnd - nanoSecondsStart)/1000000000+" seconds\n");
+			price = callableStatement.getDouble(1);
+		} catch (SQLException e) {
+			System.out.println("Not a valid call statement! " + e);
+		}finally {
+			try {
+				connection.close();
+			} catch (SQLException e) {
+				System.out.println("Could not close the db connection: " + e);
+			}
+		}
+	return price;
+	}
 }
