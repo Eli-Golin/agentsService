@@ -162,6 +162,7 @@ public class GeneralUsage {
 		String remoteIp = servletRequest.getRemoteHost();
 		int requestTypeIndex = 0;
 		int sentDataIndex = 1;
+		servletRequest.setCharacterEncoding(UTF_8_ENCODING);
 		if (remoteIp.equals(NOA_TOURSE_IP)) {
 			String body = getHttpBody(servletRequest.getReader());
 			String[] splittedBody = body.split("&");
@@ -189,6 +190,7 @@ public class GeneralUsage {
 			printWriter.flush();
 			printWriter.close();
 		} else {
+			System.out.println("\n"+answer+"\n");
 			servletResponse.getOutputStream().write(answer.getBytes(UTF_8_ENCODING));
 		}
 	}
