@@ -22,14 +22,14 @@
 	</reservationResponses>
 	<reservationResponses>
 		<numberOfReservationsInItinerary>1</numberOfReservationsInItinerary>
-		<multiReservationNo>0</multiReservationNo>
+		<multiReservationNo>1</multiReservationNo>
 		<status>Reservation Action</status> 
 		<totalPrice>408</totalPrice>
 		<currency>$</currency>
 		<comments>Resrvation Response</comments>
 		<reservationResponse>
 			<reservationInItinerary>1</reservationInItinerary>
-			<reservationNo>210</reservationNo>
+			<reservationNo>217</reservationNo>
 			<hotelId>1</hotelId>
 			<roomType>STD</roomType>
 			<roomTypeDescription>Standard Room</roomTypeDescription>

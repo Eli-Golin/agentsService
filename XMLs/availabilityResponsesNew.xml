@@ -5,17 +5,9 @@
 		<hotel>
 			<hotelAreaCd>1</hotelAreaCd>
 			<reservationInItinerary>1</reservationInItinerary>
-			<arrivalDate>15/02/2008</arrivalDate>
-			<departureDate>17/02/2008</departureDate>
 			<hotelId>1</hotelId>
 			<hotelIdDescription>DT</hotelIdDescription>
-			<hotelDescription>&lt;STRONG&gt;Hotel Tel Aviv&lt;BR&gt;Tel Aviv
-				Hotel centrally located for business and leisure, varied convention
-				and meeting facilities. Online Reservation with instant
-				confirmation.&lt;/STRONG&gt;
-				&lt;BR&gt;&lt;STRONG&gt;A&amp;nbsp;member of the &quot;Leading
-				Hotels of the World&quot;.&lt;/STRONG&gt;&amp;nbsp;
-				&lt;BR&gt;&amp;nbsp;</hotelDescription>
+			<hotelDescription>This is Hotel Description</hotelDescription>
 			<pictures>
 				<picture>
 					<pictureType>1</pictureType>
@@ -24,117 +16,133 @@
 			</pictures>
 			<comments>Hotel Level Commnets</comments>
 			<rooms>
-				<room>
-					<roomType>DLX</roomType>
-					<roomTypeDescription>Deluxe</roomTypeDescription>
-					<roomDescription>Rooms are large and comfortable with a sitting
-						area and facing the exciting cityof Tel Aviv. Double glazed
-						windows.</roomDescription>
-					<boardArrangement>BB</boardArrangement>
-					<pictures>
-						<picture>
-							<pictureType>1</pictureType>
-							<pictureUrl>http://www.danhotels.com/danSite/eng/Images/eng/Dan
-								Tel Aviv/DLX.jpg</pictureUrl>
-						</picture>
-					</pictures>
-					<price>598</price>
-					<currency>$</currency>
-					<availability>1</availability>
-					<comments>Room Level Comments</comments>
-				</room>
-				<room>
-					<roomType>STD</roomType>
-					<roomTypeDescription>Standard Room</roomTypeDescription>
-					<roomDescription>Comfortable Rooms, suitablefor single or double
-						occupancy.</roomDescription>
-					<boardArrangement>BB</boardArrangement>
-					<pictures>
-						<picture>
-							<pictureType>1</pictureType>
-							<pictureUrl>http://www.danhotels.com/danSite/eng/Images/eng/DanTel
-								Aviv/STD.jpg</pictureUrl>
-						</picture>
-					</pictures>
-					<price>408</price>
-					<currency>$</currency>
-					<availability>1</availability>
-					<comments>Room Level Comments</comments>
-				</room>
-				<room>
-					<roomType>CLUB</roomType>
-					<roomTypeDescription>Club Suite</roomTypeDescription>
-					<roomDescription>Floors 2-7, sitting room and bedroom, with
-						jacuzzi bath,&amp;nbsp;CD stereo system, VCR, fax.
-					</roomDescription>
-					<boardArrangement>BB</boardArrangement>
-					<pictures>
-						<picture>
-							<pictureType>1</pictureType>
-							<pictureUrl>http://www.danhotels.com/danSite/eng/Images/eng/Dan
-								Tel Aviv/CLUB.jpg</pictureUrl>
-						</picture>
-					</pictures>
-					<price>980</price>
-					<currency>$</currency>
-					<availability>1</availability>
-					<comments>Room Level Comments</comments>
-				</room>
-				<room>
-					<roomType>DSCS</roomType>
-					<roomTypeDescription>Deluxe Suite</roomTypeDescription>
-					<roomDescription>Floors 3-7. Bedroom facing city, sitting room
-						facing the sea,&amp;nbsp;CD stereo system,&amp;nbsp;VCR
-						and&amp;nbsp;fax.</roomDescription>
-					<boardArrangement>BB</boardArrangement>
-					<pictures>
-						<picture>
-							<pictureType>1</pictureType>
-							<pictureUrl>http://www.danhotels.com/danSite/eng/Images/eng/Dan
-								Tel Aviv/DSCS.jpg</pictureUrl>
-						</picture>
-					</pictures>
-					<price>1300</price>
-					<currency>$</currency>
-					<availability>1</availability>
-					<comments>Room Level Comments</comments>
-				</room>
-				<room>
-					<roomType>EXER</roomType>
-					<roomTypeDescription>Executive Sea View Room</roomTypeDescription>
-					<roomDescription>Floors 1-4. Rooms with sitting area facing the
-						sea. Free use of King David Crown Lounge (for adults above 18
-						years old).</roomDescription>
-					<boardArrangement>BB</boardArrangement>
-					<pictures>
-						<picture>
-							<pictureType>1</pictureType>
-							<pictureUrl>http://www.danhotels.com/danSite/eng/Images/eng/Dan
-								TelAviv/EXER.jpg</pictureUrl>
-						</picture>
-					</pictures>
-					<price>588</price>
-					<currency>$</currency>
-					<availability>1</availability>
-					<comments>Room Level Comments</comments>
-				</room>
+				<roomsPerDate>
+					<arrivalDate>15/08/2011</arrivalDate>
+					<departureDate>17/08/2011</departureDate>
+					<room>
+						<numberOfAdults>2</numberOfAdults>
+						<numberOfChildren>0</numberOfChildren>
+						<numberOfBabies>0</numberOfBabies>
+						<roomType>DLX</roomType>
+						<roomTypeDescription>Deluxe</roomTypeDescription>
+						<roomDescription>Rooms are large and comfortable with a sitting
+							area and facing the exciting cityof Tel Aviv. Double glazed
+							windows.</roomDescription>
+						<boardArrangement>BB</boardArrangement>
+						<pictures>
+							<picture>
+								<pictureType>1</pictureType>
+								<pictureUrl>http://www.danhotels.com/danSite/eng/Images/eng/Dan
+									Tel Aviv/DLX.jpg</pictureUrl>
+							</picture>
+						</pictures>
+						<price>598</price>
+						<currency>$</currency>
+						<deal>1</deal>
+						<availability>1</availability>
+						<combinationString>aaaa</combinationString>
+						<comments>Room Level Comments</comments>
+					</room>
+					<room>
+						<numberOfAdults>0</numberOfAdults>
+						<numberOfChildren>1</numberOfChildren>
+						<numberOfBabies>0</numberOfBabies>
+						<roomType>STD</roomType>
+						<roomTypeDescription>Standard Room</roomTypeDescription>
+						<roomDescription>Comfortable Rooms, suitablefor single or double
+							occupancy.</roomDescription>
+						<boardArrangement>BB</boardArrangement>
+						<pictures>
+							<picture>
+								<pictureType>1</pictureType>
+								<pictureUrl>http://www.danhotels.com/danSite/eng/Images/eng/DanTel
+									Aviv/STD.jpg</pictureUrl>
+							</picture>
+						</pictures>
+						<price>408</price>
+						<currency>$</currency>
+						<deal>1</deal>
+						<availability>1</availability>
+						<comments>Room Level Comments</comments>
+					</room>
+				</roomsPerDate>
+				<roomsPerDate>
+					<arrivalDate>11/09/2011</arrivalDate>
+					<departureDate>14/09/2011</departureDate>
+					<room>
+						<numberOfAdults>2</numberOfAdults>
+						<numberOfChildren>0</numberOfChildren>
+						<numberOfBabies>1</numberOfBabies>
+						<roomType>CLUB</roomType>
+						<roomTypeDescription>Club Suite</roomTypeDescription>
+						<roomDescription>Floors 2-7, sitting room and bedroom, with
+							jacuzzi bath,&amp;nbsp;CD stereo system, VCR, fax.
+						</roomDescription>
+						<boardArrangement>BB</boardArrangement>
+						<pictures>
+							<picture>
+								<pictureType>1</pictureType>
+								<pictureUrl>http://www.danhotels.com/danSite/eng/Images/eng/Dan
+									Tel Aviv/CLUB.jpg</pictureUrl>
+							</picture>
+						</pictures>
+						<price>980</price>
+						<currency>$</currency>
+						<deal>0</deal>
+						<availability>1</availability>
+						<combinationString>aaaa</combinationString>
+						<comments>Room Level Comments</comments>
+					</room>
+					<room>
+						<numberOfAdults>0</numberOfAdults>
+						<numberOfChildren>2</numberOfChildren>
+						<numberOfBabies>0</numberOfBabies>
+						<roomType>DSCS</roomType>
+						<roomTypeDescription>Deluxe Suite</roomTypeDescription>
+						<roomDescription>Floors 3-7. Bedroom facing city, sitting room
+							facing the sea,&amp;nbsp;CD stereo system,&amp;nbsp;VCR
+							and&amp;nbsp;fax.</roomDescription>
+						<boardArrangement>BB</boardArrangement>
+						<pictures>
+							<picture>
+								<pictureType>1</pictureType>
+								<pictureUrl>http://www.danhotels.com/danSite/eng/Images/eng/Dan
+									Tel Aviv/DSCS.jpg</pictureUrl>
+							</picture>
+						</pictures>
+						<price>1300</price>
+						<currency>$</currency>
+						<deal>1</deal>
+						<availability>1</availability>
+						<combinationString>aaaa</combinationString>
+						<comments>Room Level Comments</comments>
+					</room>
+					<room>
+						<numberOfAdults>1</numberOfAdults>
+						<numberOfChildren>0</numberOfChildren>
+						<numberOfBabies>0</numberOfBabies>
+						<roomType>EXER</roomType>
+						<roomTypeDescription>Executive Sea View Room</roomTypeDescription>
+						<roomDescription>Floors 1-4. Rooms with sitting area facing the
+							sea. Free use of King David Crown Lounge (for adults above 18
+							years old).</roomDescription>
+						<boardArrangement>BB</boardArrangement>
+						<pictures>
+							<picture>
+								<pictureType>1</pictureType>
+								<pictureUrl>http://www.danhotels.com/danSite/eng/Images/eng/Dan
+									TelAviv/EXER.jpg</pictureUrl>
+							</picture>
+						</pictures>
+						<price>588</price>
+						<currency>$</currency>
+						<deal>0</deal>
+						<availability>1</availability>
+						<combinationString>aaaa</combinationString>
+						<comments>Room Level Comments</comments>
+					</room>
+				</roomsPerDate>
 			</rooms>
-			<packages>
-				<package>
-					<availability>1</availability>
-					<boardArrangement>BB</boardArrangement>
-					<packageDescription></packageDescription>
-					<price></price>
-					<currency></currency>
-					<comments></comments>
-				</package>
-				<package>
-					...
-				</package>
-			</packages>
-		</hotel>
-		<hotel>
-			...
 		</hotel>
 	</hotels>
 </availabilityAndRatesResponses>

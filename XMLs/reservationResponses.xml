@@ -14,8 +14,8 @@
 		<roomTypeDescription>Standard Room</roomTypeDescription>
 		<arrivalDate>2007-12-20</arrivalDate>
 		<departureDate>2007-12-22</departureDate>
-		<status>Reserved</status>
-		<price>501</price> <!-- Reserved -->
+		<status>Reserved</status>  <!-- Reserved -->
+		<price>501</price>
 		<currency>$</currency>
 	</reservationResponse>
 </reservationResponses>

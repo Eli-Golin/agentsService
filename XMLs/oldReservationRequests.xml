@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<reservationRequests xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="reservationRequests.xsd">
+<reservationRequests>
   <login>
     <agentId>700000</agentId>
     <password>test</password>
@@ -7,7 +6,7 @@
   <numberOfReservationsInItinerary>1</numberOfReservationsInItinerary>
   <geustNationality>USA</geustNationality>
   <geustFirstName>Bill</geustFirstName>
-  <geustLastName>Gate</geustLastName>
+  <geustLastName>Gates</geustLastName>
   <eDanMemberNo>123</eDanMemberNo>
   <numberOfAdults>2</numberOfAdults>
   <numberOfChildren>3</numberOfChildren>

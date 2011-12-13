@@ -10,7 +10,13 @@
 			<hotel>
 				<hotelId>1</hotelId>
 				<hotelIdDescription>DT</hotelIdDescription>
-				<hotelDescription>&lt;STRONG&gt;Hotel Tel Aviv&lt;BR&gt;Tel Aviv Hotel centrally located for business and leisure, varied convention and meeting facilities. Online Reservation with instant confirmation.&lt;/STRONG&gt; &lt;BR&gt;&lt;STRONG&gt;A&amp;nbsp;member of the &quot;Leading Hotels of the World&quot;.&lt;/STRONG&gt;&amp;nbsp; &lt;BR&gt;&amp;nbsp;</hotelDescription>
+				<hotelDescription>&lt;STRONG&gt;Hotel Tel Aviv&lt;BR&gt;Tel Aviv
+					Hotel centrally located for business and leisure, varied convention
+					and meeting facilities. Online Reservation with instant
+					confirmation.&lt;/STRONG&gt;
+					&lt;BR&gt;&lt;STRONG&gt;A&amp;nbsp;member of the &quot;Leading
+					Hotels of the World&quot;.&lt;/STRONG&gt;&amp;nbsp;
+					&lt;BR&gt;&amp;nbsp;</hotelDescription>
 				<pictures>
 					<picture>
 						<pictureType>1</pictureType>
@@ -21,11 +27,14 @@
 					<room>
 						<roomType>DLX</roomType>
 						<roomTypeDescription>Deluxe</roomTypeDescription>
-						<roomDescription>Rooms are large and comfortable with a sitting area and facing the exciting cityof Tel Aviv. Double glazed windows.</roomDescription>
+						<roomDescription>Rooms are large and comfortable with a sitting
+							area and facing the exciting cityof Tel Aviv. Double glazed
+							windows.</roomDescription>
 						<pictures>
 							<picture>
 								<pictureType>1</pictureType>
-								<pictureUrl>http://www.danhotels.com/danSite/eng/Images/eng/Dan Tel Aviv/DLX.jpg</pictureUrl>
+								<pictureUrl>http://www.danhotels.com/danSite/eng/Images/eng/Dan
+									Tel Aviv/DLX.jpg</pictureUrl>
 							</picture>
 						</pictures>
 						<price>598</price>
@@ -34,23 +43,29 @@
 					<room>
 						<roomType>STD</roomType>
 						<roomTypeDescription>Standard Room</roomTypeDescription>
-						<roomDescription>Comfortable Rooms, suitablefor single or double occupancy.</roomDescription>
+						<roomDescription>Comfortable Rooms, suitablefor single or double
+							occupancy.</roomDescription>
 						<pictures>
 							<picture>
 								<pictureType>1</pictureType>
-								<pictureUrl>http://www.danhotels.com/danSite/eng/Images/eng/DanTel Aviv/STD.jpg</pictureUrl>
-							</picture></pictures>
+								<pictureUrl>http://www.danhotels.com/danSite/eng/Images/eng/DanTel
+									Aviv/STD.jpg</pictureUrl>
+							</picture>
+						</pictures>
 						<price>408</price>
 						<availability>1</availability>
 					</room>
 					<room>
 						<roomType>CLUB</roomType>
 						<roomTypeDescription>Club Suite</roomTypeDescription>
-						<roomDescription>Floors 2-7, sitting room and bedroom, with jacuzzi bath,&amp;nbsp;CD stereo system, VCR, fax.</roomDescription>
+						<roomDescription>Floors 2-7, sitting room and bedroom, with
+							jacuzzi bath,&amp;nbsp;CD stereo system, VCR, fax.
+						</roomDescription>
 						<pictures>
 							<picture>
 								<pictureType>1</pictureType>
-								<pictureUrl>http://www.danhotels.com/danSite/eng/Images/eng/Dan Tel Aviv/CLUB.jpg</pictureUrl>
+								<pictureUrl>http://www.danhotels.com/danSite/eng/Images/eng/Dan
+									Tel Aviv/CLUB.jpg</pictureUrl>
 							</picture>
 						</pictures>
 						<price>980</price>
@@ -59,11 +74,14 @@
 					<room>
 						<roomType>DSCS</roomType>
 						<roomTypeDescription>Deluxe Suite</roomTypeDescription>
-						<roomDescription>Floors 3-7. Bedroom facing city, sitting room facing the sea,&amp;nbsp;CD stereo system,&amp;nbsp;VCR and&amp;nbsp;fax.</roomDescription>
+						<roomDescription>Floors 3-7. Bedroom facing city, sitting room
+							facing the sea,&amp;nbsp;CD stereo system,&amp;nbsp;VCR
+							and&amp;nbsp;fax.</roomDescription>
 						<pictures>
 							<picture>
 								<pictureType>1</pictureType>
-								<pictureUrl>http://www.danhotels.com/danSite/eng/Images/eng/Dan Tel Aviv/DSCS.jpg</pictureUrl>
+								<pictureUrl>http://www.danhotels.com/danSite/eng/Images/eng/Dan
+									Tel Aviv/DSCS.jpg</pictureUrl>
 							</picture>
 						</pictures>
 						<price>1300</price>
@@ -72,17 +90,21 @@
 					<room>
 						<roomType>EXER</roomType>
 						<roomTypeDescription>Executive Sea View Room</roomTypeDescription>
-						<roomDescription>Floors 1-4. Rooms with sitting area facing the sea. Free use of King David Crown Lounge (foradults above 18 years old).</roomDescription>
+						<roomDescription>Floors 1-4. Rooms with sitting area facing the
+							sea. Free use of King David Crown Lounge (foradults above 18
+							years old).</roomDescription>
 						<pictures>
 							<picture>
 								<pictureType>1</pictureType>
-								<pictureUrl>http://www.danhotels.com/danSite/eng/Images/eng/Dan TelAviv/EXER.jpg</pictureUrl>
+								<pictureUrl>http://www.danhotels.com/danSite/eng/Images/eng/Dan
+									TelAviv/EXER.jpg</pictureUrl>
 							</picture>
 						</pictures>
 						<price>588</price>
 						<availability>1</availability>
 					</room>
-				</rooms>	
+				</rooms>
 			</hotel>
 		</hotels>
-</availabilityAndRatesResponse></availabilityAndRatesResponses>
+	</availabilityAndRatesResponse>
+</availabilityAndRatesResponses>

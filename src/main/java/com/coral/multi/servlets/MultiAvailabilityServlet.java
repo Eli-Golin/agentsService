@@ -101,7 +101,7 @@ public class MultiAvailabilityServlet extends HttpServlet {
 		String roomType = hotel.getHotelDetails().getRoomType();
 		String arrivalDate = hotel.getHotelDetails().getArrivalDate();
 		String departureDate = hotel.getHotelDetails().getDepartureDate();
-		int HILMIS_DEFAULT_NUM_OF_ROOMS = 1;
+		final int HILMIS_DEFAULT_NUM_OF_ROOMS = 1;
 		int numOfRooms = HILMIS_DEFAULT_NUM_OF_ROOMS; // Hilmi's default!
 		String boardArrangement = hotel.getHotelDetails().getBoardArrangement();
 		List<RoomOccupancy> roomsOccupancyList = hotel.getRoomsOccupancyList();
