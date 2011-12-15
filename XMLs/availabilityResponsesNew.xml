@@ -63,6 +63,7 @@
 						<currency>$</currency>
 						<deal>1</deal>
 						<availability>1</availability>
+						<combinationString>aaaa</combinationString>
 						<comments>Room Level Comments</comments>
 					</room>
 				</roomsPerDate>
