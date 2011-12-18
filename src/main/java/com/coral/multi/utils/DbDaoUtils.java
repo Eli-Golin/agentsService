@@ -496,7 +496,7 @@ public class DbDaoUtils {
 			LocalDate departureDate =  GeneralUsage.convertStringToDate(checkOutDate);
 			Period period = new Period(arrivalDate,departureDate);
 			int numOfDays = period.getDays();
-			int numOfNights = numOfDays - 1;
+			int numOfNights = numOfDays;
 			callableStatement.setInt(15, numOfNights);
 			callableStatement.setString(16, boardArrangement);
 			callableStatement.setDouble(17,nlsLangCd);
