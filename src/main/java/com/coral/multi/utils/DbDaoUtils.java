@@ -553,4 +553,58 @@ public class DbDaoUtils {
 		}
 	return price;
 	}
+	
+	public static synchronized String getRoomDescription(double langCd, int hotelId, String roomType){
+		String procedure = "{? = call ROOMTYPE_HOTELS_NLS_Q.GET_ROOMTYPE_DETAILS(?,?,?)}";
+		String roomDescription = "";
+		try {
+			connection = dataSource.getConnection();
+			CallableStatement callableStatement = connection.prepareCall(procedure);
+			callableStatement.registerOutParameter(1, Types.VARCHAR);
+			callableStatement.setDouble(2, langCd);
+			callableStatement.setInt(3, hotelId);
+			callableStatement.setString(4, roomType);
+			long nanoSecondsStart = System.nanoTime();
+			callableStatement.execute();
+			long nanoSecondsEnd = System.nanoTime();
+			System.out.println("ROOMTYPE_HOTELS_NLS_Q.GET_ROOMTYPE_DETAILS in database takes: "+(nanoSecondsEnd - nanoSecondsStart)/1000000000+" seconds\n");
+			roomDescription = callableStatement.getString(1);
+		} catch (SQLException e) {
+			System.out.println("Not a valid call statement! " + e);
+		}finally {
+			try {
+				connection.close();
+			} catch (SQLException e) {
+				System.out.println("Could not close the db connection: " + e);
+			}
+		}
+		return roomDescription;
+	}
+	
+	public static synchronized String getRoomTypeDescription(double langCd, int hotelId, String roomType){
+		String procedure = "{? = call ROOMTYPE_HOTELS_NLS_Q.GET_ROOMTYPE_DESC(?,?,?)}";
+		String roomTypeDescription = "";
+		try {
+			connection = dataSource.getConnection();
+			CallableStatement callableStatement = connection.prepareCall(procedure);
+			callableStatement.registerOutParameter(1, Types.VARCHAR);
+			callableStatement.setDouble(2, langCd);
+			callableStatement.setInt(3, hotelId);
+			callableStatement.setString(4, roomType);
+			long nanoSecondsStart = System.nanoTime();
+			callableStatement.execute();
+			long nanoSecondsEnd = System.nanoTime();
+			System.out.println("ROOMTYPE_HOTELS_NLS_Q.GET_ROOMTYPE_DESC in database takes: "+(nanoSecondsEnd - nanoSecondsStart)/1000000000+" seconds\n");
+			roomTypeDescription = callableStatement.getString(1);
+		} catch (SQLException e) {
+			System.out.println("Not a valid call statement! " + e);
+		}finally {
+			try {
+				connection.close();
+			} catch (SQLException e) {
+				System.out.println("Could not close the db connection: " + e);
+			}
+		}
+		return roomTypeDescription;
+	}
 }

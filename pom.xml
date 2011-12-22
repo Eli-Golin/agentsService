@@ -5,7 +5,7 @@
 	<artifactId>agents_v1.1</artifactId>
 	<packaging>war</packaging>
 	<version>1.0-SNAPSHOT</version>
-	<name>test_web_service Maven Webapp</name>
+	<name>agents_v1.1 Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 	<repositories>
 		<repository>
@@ -17,7 +17,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<org.springframework.version>3.0.6.RELEASE</org.springframework.version>
-		<com.coral.projectBaseDir>C:\Projects\test_web_service</com.coral.projectBaseDir>
+		<com.coral.projectBaseDir>C:\Projects\agents_v1.1</com.coral.projectBaseDir>
 	</properties>
 
 	<dependencies>
@@ -28,8 +28,8 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>javax</groupId>
-			<artifactId>javaee-api</artifactId>
+			<groupId>org.glassfish</groupId>
+			<artifactId>glassfish-servlet-impl</artifactId>
 			<version>6.0</version>
 			<scope>provided</scope>
 		</dependency>
@@ -62,7 +62,7 @@
 		<dependency>
 			<groupId>com.thoughtworks.xstream</groupId>
 			<artifactId>xstream</artifactId>
-			<version>1.3.1</version>
+			<version>1.4.2</version>
 		</dependency>
 		<dependency>
 			<groupId>joda-time</groupId>
@@ -173,11 +173,11 @@
 					<hostName>localhost</hostName>
 					<port>8080</port>
 					<fileNames>
-						<fileName>${com.coral.projectBaseDir}\target\test.war</fileName>
+						<fileName>${com.coral.projectBaseDir}\target\agents.war</fileName>
 					</fileNames>
 				</configuration>
 			</plugin>
 		</plugins>
-		<finalName>agents</finalName> <!-- availability_and_reservations -->
+		<finalName>agents</finalName>
 	</build>
 </project>

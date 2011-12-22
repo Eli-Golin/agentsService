@@ -6,6 +6,7 @@ public class ResponseDetails {
 	private Integer hotelId;
 	private String roomType;
 	private String roomDescription;
+	private String roomTypeDescription;
 	private String arrivalDate;
 	private String departureDate;
 	private String status;
@@ -41,6 +42,12 @@ public class ResponseDetails {
 	}
 	public void setRoomDescription(String roomDescription) {
 		this.roomDescription = roomDescription;
+	}
+	public String getRoomTypeDescription() {
+		return roomTypeDescription;
+	}
+	public void setRoomTypeDescription(String roomTypeDescription) {
+		this.roomTypeDescription = roomTypeDescription;
 	}
 	public String getArrivalDate() {
 		return arrivalDate;

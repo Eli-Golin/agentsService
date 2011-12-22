@@ -66,7 +66,7 @@ public class MultiReservationServlet extends HttpServlet{
 			successFlag = reservationNum != 0 ? true : false;
 			if(successFlag){
 				ReservationResponse currentReservationResponse = new ReservationResponse();
-				makeResponseFromRequest(currentReservationRequest, currentReservationResponse,reservationNum);
+				makeResponseFromRequest(currentReservationRequest, currentReservationResponse,reservationNum, request);
 				storedReservNumbers.add(Long.toString(reservationNum));
 				responsesList.add(currentReservationResponse);
 			}
@@ -112,12 +112,15 @@ public class MultiReservationServlet extends HttpServlet{
 		return failedToCancelNumbers;
 	}
 	
-	private void makeResponseFromRequest(NewReservationRequest currentReservationRequest, ReservationResponse currentReservationResponse, long reservationNum){
+	private void makeResponseFromRequest(NewReservationRequest currentReservationRequest, ReservationResponse currentReservationResponse, long reservationNum, HttpServletRequest request){
 			currentReservationResponse.setNumOfReservationsIten(1); //default
 			currentReservationResponse.setCurrency(currentReservationRequest.getReservRoomDetails().getCurrency());
 			currentReservationResponse.setTotalPrice(currentReservationRequest.getReservRoomDetails().getPrice());
-			currentReservationResponse.setComments("Reservation Response");//ask avi!!
-			currentReservationResponse.setStatus("Reserved");// ask avi!!
+			currentReservationResponse.setComments("");//TODO: call hilmi's procedure in the future
+			if(reservationNum != 0)
+				currentReservationResponse.setStatus("Reserved");
+			else
+				currentReservationResponse.setStatus("Not Reserved");
 			ResponseDetails responseDetails = new ResponseDetails();
 			responseDetails.setArrivalDate(currentReservationRequest.getReservRoomDetails().getArrivalDate());
 			responseDetails.setDepartureDate(currentReservationRequest.getReservRoomDetails().getDepartureDate());
@@ -127,8 +130,17 @@ public class MultiReservationServlet extends HttpServlet{
 			responseDetails.setReservIten(1); //default
 			responseDetails.setPrice(currentReservationRequest.getReservRoomDetails().getPrice());
 			responseDetails.setRoomType(currentReservationRequest.getReservRoomDetails().getRoomType());
-			responseDetails.setRoomDescription(""); // ask avi!!
-			responseDetails.setStatus("Reserved"); //ask avi!!
+			double langCd = (Boolean)request.getAttribute(AppConstants.IS_USA) ? AppConstants.P_NLS_LANG_CD_ISR : AppConstants.P_NLS_LANG_CD_FOREIGN;
+			Integer hotelId = responseDetails.getHotelId();
+			String roomType = responseDetails.getRoomType();
+			String roomDescription = DbDaoUtils.getRoomDescription(langCd, hotelId, roomType);
+			responseDetails.setRoomDescription(roomDescription);
+			String roomTypeDescription = DbDaoUtils.getRoomTypeDescription(langCd, hotelId, roomType);
+			responseDetails.setRoomTypeDescription(roomTypeDescription);
+			if(reservationNum != 0)
+				responseDetails.setStatus("Reserved");
+			else
+				responseDetails.setStatus("Not Reserved");
 			currentReservationResponse.setResponses(responseDetails);
 	}		
 	

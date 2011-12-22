@@ -28,9 +28,10 @@ public class ReservResWrapper implements XmlToObjectWrapper {
 		xStream.alias("reservationResponse", ResponseDetails.class);
 		xStream.aliasField("reservationInItinerary", ResponseDetails.class, "reservIten");
 		xStream.aliasField("reservationNo", ResponseDetails.class, "reservNum");
-		xStream.aliasField("roomTypeDescription", ResponseDetails.class, "roomDescription");
-		//	hotelId field is defined the same as in xml 
 		//	roomType field is defined the same as in xml
+		//  roomDescription field is defined the same as in xml 
+		//	roomTypeDescription field is defined the same as in xml 
+		//	hotelId field is defined the same as in xml 
 		//	arrivalDate field is defined the same as in xml 
 		//	departureDate field is defined the same as in xml 
 		//	price field is defined the same as in xml 

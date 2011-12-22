@@ -32,9 +32,9 @@ public class PriceValidationFilter implements Filter{
 		filterConfig.getServletContext().log("\n-------Inside Price Validation Filter---------\n");
 		MultiReservationRequest reservations = (MultiReservationRequest)req.getAttribute(AppConstants.CONVERTED_OBJECT);
 		List<NewReservationRequest> listOfRequests = reservations.getReservDetails();
-		boolean isLocalAgent = (Boolean)req.getAttribute(AppConstants.IS_USA);
+		boolean isForeignAgent = (Boolean)req.getAttribute(AppConstants.IS_USA);
 		boolean validPrice = true;
-		if(isLocalAgent)
+		if(!isForeignAgent)
 			validPrice = checkPriceIntegrity(listOfRequests);
 		if(!validPrice){
 			RequestDispatcher requestDispatcher = req.getRequestDispatcher("/priceNotValid");

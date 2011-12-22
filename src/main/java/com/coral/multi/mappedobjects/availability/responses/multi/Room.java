@@ -3,7 +3,7 @@ package com.coral.multi.mappedobjects.availability.responses.multi;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 @XStreamAlias("room")
-public class Room {
+public class Room implements Comparable<Room>{
 	
 	@XStreamAlias("numberOfAdults")
 	private int numOfAdults;
@@ -151,6 +151,16 @@ public class Room {
 
 	public void setComments(String comments) {
 		this.comments = comments;
+	}
+
+	@Override
+	public int compareTo(Room other) { // in order to be sorted in ascending order
+		int ans = 0;
+		if(price < other.price)
+			ans = -1;
+		else if(price > other.price)
+			ans = 1;
+		return ans;
 	}
 	
 }

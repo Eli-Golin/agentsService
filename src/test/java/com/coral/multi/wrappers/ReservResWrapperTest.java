@@ -107,8 +107,8 @@ public class ReservResWrapperTest {
 	}
 	
 	@Test
-	public void checkRoomDescription(){
-		Assert.assertEquals("Standard Room", responseObj.getResponses().getRoomDescription());
+	public void checkRoomTypeDescription(){
+		Assert.assertEquals("Standard Room", responseObj.getResponses().getRoomTypeDescription());
 	}
 	
 	@Test

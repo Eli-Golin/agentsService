@@ -118,7 +118,7 @@ public class MultiReservResWrapperTest {
 	
 	@Test
 	public void checkRoomDescription(){
-		Assert.assertEquals("Standard Room",responseObj.getResponses().get(0).getResponses().getRoomDescription());
+		Assert.assertEquals("Description",responseObj.getResponses().get(0).getResponses().getRoomDescription());
 	}
 	
 	@Test

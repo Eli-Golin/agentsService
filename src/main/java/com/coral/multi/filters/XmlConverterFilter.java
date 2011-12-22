@@ -60,7 +60,6 @@ public class XmlConverterFilter implements Filter {
 		else {
 			xml = buildNewXmlResponse(request, requestTypeAndSentData, requestTypeIndex, context);
 		}
-		filterConfig.getServletContext().log("\n"+xml+"\n");
 		request.setAttribute(AppConstants.CONVERTED_OBJECT, xml);
 		filterConfig.getServletContext().log("\n---------------Outside XmlConverterFilter----------------\n");
 	}

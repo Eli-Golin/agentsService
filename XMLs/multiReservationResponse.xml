@@ -12,6 +12,7 @@
 			<reservationNo>210</reservationNo>
 			<hotelId>1</hotelId>
 			<roomType>STD</roomType>
+			<roomDescription>fgsdgsdgsdg</roomDescription>
 			<roomTypeDescription>Standard Room</roomTypeDescription>
 			<arrivalDate>2007-12-20</arrivalDate>
 			<departureDate>2007-12-22</departureDate>
@@ -32,6 +33,7 @@
 			<reservationNo>217</reservationNo>
 			<hotelId>1</hotelId>
 			<roomType>STD</roomType>
+			<roomDescription>fgsdgsdgsdg</roomDescription>
 			<roomTypeDescription>Standard Room</roomTypeDescription>
 			<arrivalDate>2007-12-20</arrivalDate>
 			<departureDate>2007-12-22</departureDate>

@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.Hashtable;
 import java.util.LinkedList;
 import java.util.List;
@@ -82,13 +83,13 @@ public class MultiAvailabilityServlet extends HttpServlet {
 			String requestHotelArrivalDate = reservationHotel.getHotelDetails().getArrivalDate();
 			String requestHotelDepartuDate = reservationHotel.getHotelDetails().getDepartureDate();
 			List<RoomsPerDate> roomsPerDates = responseHotel.getRooms().getRoomsArrangement();
-			RoomsPerDate roomArrangement = new RoomsPerDate();
-			roomArrangement.setArrivalDate(requestHotelArrivalDate);
-			roomArrangement.setDepartureDate(requestHotelDepartuDate);
+			RoomsPerDate roomsPerDate = new RoomsPerDate();
+			roomsPerDate.setArrivalDate(requestHotelArrivalDate);
+			roomsPerDate.setDepartureDate(requestHotelDepartuDate);
 			Set<RoomOccupancy> allOccupancies = occupancyToRoomsResults.keySet();
 			for (RoomOccupancy roomOccupancy : allOccupancies) 
-				roomArrangement.getRooms().addAll(occupancyToRoomsResults.get(roomOccupancy));
-			roomsPerDates.add(roomArrangement);
+				roomsPerDate.getRooms().addAll(occupancyToRoomsResults.get(roomOccupancy));
+			roomsPerDates.add(roomsPerDate);
 		}
 	}
 
@@ -123,11 +124,13 @@ public class MultiAvailabilityServlet extends HttpServlet {
 					allKindOfRooms.addAll(returnedRoomsForSingleOccupancyBB);
 					allKindOfRooms.addAll(returnedRoomsForSingleOccupancyHB);
 					allKindOfRooms.addAll(returnedRoomsForSingleOccupancyFB);
+					Collections.sort(allKindOfRooms); //all rooms corresponding to single occupancy will be sorted by price. from lowest to highest
 					occupancyToResultsRooms.put(roomOccupancy,allKindOfRooms);
 				}
 				else {
 					resultsTable = DbDaoUtils.getBestRateCombination(new Double(lang_cd), hotelId, areaCd, roomType, arrivalDate,departureDate, numOfAdults, numOfChildren, numOfRooms,agentId, boardArrangement,numOfBabies);
 					List<Room> roomsForSingleOccupancy = createListOfRoomsFromResultTable(resultsTable, hotel.getHotelDetails().getBoardArrangement());
+					Collections.sort(roomsForSingleOccupancy); //all rooms corresponding to single occupancy will be sorted by price. from lowest to highest
 					occupancyToResultsRooms.put(roomOccupancy,roomsForSingleOccupancy);
 				}
 			}catch (SQLException e){

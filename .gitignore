@@ -1,5 +1,7 @@
 # all hidden files/directories will be ignored except .gitignore
 .*
 !/.gitignore
+#all .orig files will be ignored
+*.orig
 # all files in target directory will be ignored intirely 
 target/
