@@ -2,7 +2,7 @@
 <multiResponses>
 	<reservationResponses>
 		<numberOfReservationsInItinerary>1</numberOfReservationsInItinerary>
-		<multiReservationNo>1</multiReservationNo>
+		<multiReservationNo>1</multiReservationNo> <!-- a reservation number which combine the whole reservation (all reservation numbers.) -->
 		<status>Reservation Action</status>
 		<totalPrice>408</totalPrice>
 		<currency>$</currency>
