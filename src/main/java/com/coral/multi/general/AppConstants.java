@@ -33,10 +33,10 @@ public class AppConstants {
 	public static final String NO_FREE_ROOMS_AVAILABLE = "The Amount of Rooms Specified is Not Available";
 	public static final String INTERNAL_ERROR = "The Service Has Encountered an Internal Problem, Please Contact Dan's Technical Support";
 	public static final String CANCELATION_REQUEST_FAILED = "Reservation Cancellation Failed Due to Unknown Reasons. You're Strongly Advised to Varify your Last Cancelations manually\nYour reservation number is: ";
-	public static final String RESERVATION_AND_ARRIVAL_DATES_ARE_THE_SAME = "Making reservations for the current date is impossible";
+	public static final String RESERVATION_AND_ARRIVAL_DATES_ARE_THE_SAME = "Reservation Date cannot match current date, nor can it match the departure date";
 	public static final String RESERVATION_ON_FRIDAY_ARRIVAL_ON_NEXT_SUNDAY = "Making reservations on fridays while arrival date is the nearest Sunday, is not allowed";
 	public static final String CAPACITY_VIOLATION = "Reservations for children without parents accompaniment are not allowed";
-	public static final String DAYS_INTERVAL_VIOLATION  = "Maximum reservation period must be not longer than 14 days";
+	public static final String DAYS_INTERVAL_VIOLATION  = "Maximum reservation period must be not longer than 14 days and at least 1";
 	public static final String DATES_OVERLAPPING_VIOLATION = "The same guest can not stay in different hotels at the same period.";
 	public static final String GUETS_NAMES_VALIDATION_FAILED = "Either one of the guest's first name or last name is missing.";
 	public static final String ROOM_RESERVATION_FAILED = "Room reservation has failed.";

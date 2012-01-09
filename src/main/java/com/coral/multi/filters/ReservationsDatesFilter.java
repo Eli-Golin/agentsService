@@ -58,7 +58,7 @@ public class ReservationsDatesFilter implements Filter {
 				boolean notOverlapping = guestInfoSet.add(new GuestReservationInfo(guestFirstName, guestLastName, hotelId, arrivalDepartureDates));
 				if(!notOverlapping)
 					overlappingDates = true;
-				currentDateIsNotArrivalDate = checkArrivalDateNotCurrentDate(arrivalDateString);
+				currentDateIsNotArrivalDate = checkArrivalDateNotCurrentDate(arrivalDateString,departureDateString);
 				rightIntervalBetweenFridayAndSaturday = checkCurrentDateFridayArrivalDateSunday(arrivalDateString);
 				correctIntervalOfDays = isCorrectIntervalOfDays(arrivalDateString,departureDateString);
 				if(!currentDateIsNotArrivalDate | !rightIntervalBetweenFridayAndSaturday | !correctIntervalOfDays | overlappingDates){
@@ -83,7 +83,7 @@ public class ReservationsDatesFilter implements Filter {
 			 for(ReservationHotel reservationHotel : reservationHotelsList){
 				 String arrivalDateString = reservationHotel.getHotelDetails().getArrivalDate();
 				 String departureDateString = reservationHotel.getHotelDetails().getDepartureDate();
-				 currentDateIsNotArrivalDate = checkArrivalDateNotCurrentDate(arrivalDateString);
+				 currentDateIsNotArrivalDate = checkArrivalDateNotCurrentDate(arrivalDateString,departureDateString);
 				 rightIntervalBetweenFridayAndSaturday = checkCurrentDateFridayArrivalDateSunday(arrivalDateString);
 				 correctIntervalOfDays = isCorrectIntervalOfDays(arrivalDateString, departureDateString);
 					if(!currentDateIsNotArrivalDate | !rightIntervalBetweenFridayAndSaturday | !correctIntervalOfDays){
@@ -104,11 +104,13 @@ public class ReservationsDatesFilter implements Filter {
 		filterConfig.getServletContext().log("\n----Outside ReservationDatesFilter-----\n");
 	}
 
-	private boolean checkArrivalDateNotCurrentDate(String dateString){
+	private boolean checkArrivalDateNotCurrentDate(String arrivalDateString,String departureDateString){
 		LocalDate currentDate = new LocalDate();
-		LocalDate arrivalDate = GeneralUsage.convertStringToDate(dateString);
-		if(currentDate.equals(arrivalDate))
+		LocalDate arrivalDate = GeneralUsage.convertStringToDate(arrivalDateString);
+		LocalDate departureDate = GeneralUsage.convertStringToDate(departureDateString);
+		if(currentDate.equals(arrivalDate) || arrivalDate.equals(departureDate))
 			return false;
+		
 		return true;
 	}
 	
@@ -133,7 +135,8 @@ public class ReservationsDatesFilter implements Filter {
 		LocalDate departureDate = GeneralUsage.convertStringToDate(departureDateString);
 		Days days = Days.daysBetween(arrivalDate, departureDate);
 		int interval = days.getDays();
-		if(interval > 14)
+		filterConfig.getServletContext().log("\n----Inside isCorrectIntervalOfDays interval  " + interval + " \n");
+		if(interval > 14 || interval < 1) //moran - fixed bug of same day arrival and departure
 			return false;
 		return true;
 	}
