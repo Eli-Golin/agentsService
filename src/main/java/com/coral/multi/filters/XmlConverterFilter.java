@@ -42,6 +42,7 @@ public class XmlConverterFilter implements Filter {
 		int requestTypeIndex = 0;
 		int sentDataIndex = 1;
 		Boolean isUsaClient = (Boolean)request.getAttribute(AppConstants.IS_USA);
+		filterConfig.getServletContext().log("\n--------------- is usa client  "+isUsaClient + " \n");
 		WebApplicationContext context = ContextLoader.getCurrentWebApplicationContext();
 		Object builtObject;
 		defineAttributeValues(request, requestTypeAndSentData, requestTypeIndex);

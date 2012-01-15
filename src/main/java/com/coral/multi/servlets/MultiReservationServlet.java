@@ -116,7 +116,7 @@ public class MultiReservationServlet extends HttpServlet{
 			currentReservationResponse.setNumOfReservationsIten(1); //default
 			currentReservationResponse.setCurrency(currentReservationRequest.getReservRoomDetails().getCurrency());
 			currentReservationResponse.setTotalPrice(currentReservationRequest.getReservRoomDetails().getPrice());
-			currentReservationResponse.setComments("");//TODO: call hilmi's procedure in the future
+			currentReservationResponse.setComments(currentReservationRequest.getReservRoomDetails().getComments());//TODO: call hilmi's procedure in the future
 			if(reservationNum != 0)
 				currentReservationResponse.setStatus("Reserved");
 			else
