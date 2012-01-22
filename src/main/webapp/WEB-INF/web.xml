@@ -18,7 +18,7 @@
 		<filter-class>com.coral.multi.filters.ClientOriginResolverFilter</filter-class>
 		<init-param>
 			<param-name>isUSA</param-name>
-			<param-value>146.145.198.18,146.145.198.17,146.145.198.19,65.102.51.254</param-value>
+			<param-value>146.145.193.18,146.145.184.66,146.145.198.18,146.145.198.17,146.145.198.19,65.102.51.254</param-value>
 		</init-param>
 	</filter>
 

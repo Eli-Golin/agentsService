@@ -109,7 +109,9 @@ public class DbDaoUtils {
 			System.out.println("authorization database search takes: "+(nanoSecondsEnd - nanoSecondsStart)/1000000000+" seconds\n");
 			int result = callStatement.getInt(1);
 			System.out.println("Outside DbDaoUtils.authorizationSuccess\n");
+			System.out.println("\n--------Inside DbDaoUtils return "+ result + " for agentNum + " +  agentNum + " ip  " + ip + " ------");
 			return 1 == result ? true : false;
+			
 		} catch (SQLException e) {
 			System.out.println("Not a valid call statement! " + e);
 		} finally {
